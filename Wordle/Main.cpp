@@ -8,30 +8,19 @@
 #include "Statistic.h"
 #include "Help.h"
 #include "GameHelp.h"
+#include "Menu.h"
+
+using namespace std;
 
 int main()
 {
-	Game* gamePtr = NULL;
+	
+	Menu m;
 
-	int select = 0;
-	int* ptr = &select;
-
-	printf("Welcome to Werdle\nSelect an option: ");
-	scanf("%d", ptr);
-	if (*ptr == 1) {
-		gamePtr = new Play();
-		printf("%s",gamePtr->option().c_str());
-	}
-	else if (*ptr == 2) {
-		gamePtr = new Statistic();
-		printf("%s", gamePtr->option().c_str());
-	}
-	else if (*ptr == 3) {
-		gamePtr = new Help();
-		printf("%s", gamePtr->option().c_str());
-	}
-	else {
-		printf("Please choose from 1 to 3");
-	}
+	do {
+		m.show_function();
+	} while (m.menu_number != 0);
+	
+	
 	return 0;
 }

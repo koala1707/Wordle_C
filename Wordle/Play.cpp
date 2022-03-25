@@ -2,5 +2,5 @@
 
 string Play::option()
 {
-    return string();
+    return "Play";
 }

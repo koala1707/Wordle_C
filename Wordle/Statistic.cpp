@@ -2,5 +2,5 @@
 
 string Statistic::option()
 {
-    return string();
+    return "Static";
 }
