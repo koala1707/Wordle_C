@@ -2,11 +2,11 @@
 class Menu
 {
 public:
-	void menu();
 	void show_function();
 	int menu_number = 0;
+	int chose_play = 0;
 
 protected:
-
+	void menu();
 };
 

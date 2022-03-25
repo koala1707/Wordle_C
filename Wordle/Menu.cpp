@@ -32,30 +32,26 @@ void Menu::menu()
 
 void Menu::show_function()
 {
+
 	menu();
-
-	Game* gamePtr = NULL;
-
+	//Start Playing the game
 	if (menu_number == 1) {
-		gamePtr = new Play();
-		printf("%s",gamePtr->option().c_str());
-		
+		Play p;
+		chose_play += 1;
 	}
+	//See the statistic
 	else if (menu_number == 2) {
-		gamePtr = new Statistic();
-		printf("%s", gamePtr->option().c_str());
-		
+		Statistic s;
 	}
+	//See the help
 	else if (menu_number == 3) {
-		gamePtr = new Help();
-		printf("%s", gamePtr->option().c_str());
-		
+		Help h;
 	}
+	//Invalid input
 	else {
 		int c = getchar();
 		while (c != '\n' && c != EOF)
 			c = getchar();
-		
 	}
 	
 }

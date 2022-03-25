@@ -21,6 +21,10 @@ int main()
 		m.show_function();
 	} while (m.menu_number != 0);
 	
+	string test = "apple";
+	Play p;
+
+	p.split(test);
 	
 	return 0;
 }
