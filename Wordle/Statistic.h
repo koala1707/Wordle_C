@@ -1,9 +1,10 @@
 #pragma once
 #include "Game.h"
 
-class Statistic : public Game
+class Statistic
 {
 public:
-	string option() override;
+	Statistic();
+	~Statistic();
 };
 

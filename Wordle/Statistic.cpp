@@ -1,6 +1,10 @@
 #include "Statistic.h"
 
-string Statistic::option()
+Statistic::Statistic()
 {
-    return "Static";
+    printf("statistic\n");
+}
+
+Statistic::~Statistic()
+{
 }

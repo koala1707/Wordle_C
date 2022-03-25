@@ -1,10 +1,11 @@
 #pragma once
 #include "Game.h"
 
-class Help : public Game
+class Help 
 {
 public:
-	string option() override;
+	Help();
+	~Help();
 
 };
 

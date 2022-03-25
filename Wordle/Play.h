@@ -1,9 +1,15 @@
 #pragma once
-#include "Game.h"
+#include <string>
 
-class Play : public Game
+
+class Play
 {
 public:
-	string option() override;
+	Play();
+	~Play();
+	void split(string s);
+
+protected:
+	/*void split(string s);*/
 };
 
