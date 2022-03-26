@@ -26,6 +26,7 @@ void Menu::menu()
 	int *menu_ptr = &menu_number;
 	printf("> ");
 	scanf("%d", menu_ptr);
+
 	
 	
 }

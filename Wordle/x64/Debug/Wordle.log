@@ -1,7 +1,3 @@
-﻿  Main.cpp
-  Menu.cpp
-  Play.cpp
-C:\Users\m3tpf\source\repos\Wordle\Wordle\Play.h(10,13): error C2061: syntax error: identifier 'string'
-C:\Users\m3tpf\source\repos\Wordle\Wordle\Play.cpp(37,1): error C2511: 'void Play::split(std::string)': overloaded member function not found in 'Play'
-C:\Users\m3tpf\source\repos\Wordle\Wordle\Play.h(5): message : see declaration of 'Play'
-  Generating Code...
+﻿  Play.cpp
+C:\Users\m3tpf\source\repos\Wordle\Wordle\Play.cpp(19,16): warning C4101: 'd': unreferenced local variable
+  Wordle.vcxproj -> C:\Users\m3tpf\source\repos\Wordle\x64\Debug\Wordle.exe
