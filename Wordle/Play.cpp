@@ -29,14 +29,12 @@ Play::Play()
         list_ans.push_back(input);
         auto show_all_inputs= show_inputs(attempts, response);
        // if (!show_all_inputs.empty()) {
-            for (int i = 0; i < show_all_inputs.size(); i++) {
-                printf("%s\n", show_all_inputs[i].c_str());
-            }
+        for (int i = 0; i < show_all_inputs.size(); i++) {
+            printf("%s\n", show_all_inputs[i].c_str());
+        }
         //}
-       
-        
     }
-    
+    printf("Great!\n\n");
 }
 
 
@@ -48,15 +46,14 @@ void Play::split_input(string s)
 {
 
     //map of the letter in dictionary
-   
     for (int i = 0; i < expectation.length(); i++) {
         ans_map.insert(pair<int, char>(i, expectation[i]));
     }
-    
     bool c = false;
+    response = "";
     for (int i = 0; i < s.length(); i++) {
         if (s[i] == ans_map[i]) {
-            printf("same position: %c\n", ans_map[i]);
+           // printf("same position: %c\n", ans_map[i]);
             //response += '[' + s[i] + ']';
             response += '[';
             response += s[i];
@@ -66,7 +63,7 @@ void Play::split_input(string s)
         else{
             for (int j = 0; j < ans_map.size(); j++) {
                 if (s[i] == ans_map[j] && s[skip]!=ans_map[j]) {
-                    printf("included: %c\n", ans_map[j]);
+                    //printf("included: %c\n", ans_map[j]);
                     //response += '|' + s[i] + '|';
                     response += '|';
                     response += s[i];
@@ -83,7 +80,7 @@ void Play::split_input(string s)
         }
         
     }
-    printf("res: %s\n", response.c_str());
+    //printf("res: %s\n", response.c_str());
 
    
     //for (const auto& x : ans_map)
