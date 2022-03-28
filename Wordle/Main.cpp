@@ -15,15 +15,10 @@ using namespace std;
 int main()
 {
 	
-
-
 	Menu m;
-
 	do {
 		m.show_function();
 	} while (m.menu_number != 0);
-	
-	
 	
 	return 0;
 }

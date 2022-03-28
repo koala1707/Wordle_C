@@ -25,6 +25,7 @@ protected:
 	map<int, string> show_inputs(int times, string res);
 	map<int, char> ans_map = {};
 	int attempts;
+
 	
 	
 	string input;

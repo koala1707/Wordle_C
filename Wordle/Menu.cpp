@@ -33,12 +33,14 @@ void Menu::menu()
 
 void Menu::show_function()
 {
-
+	
 	menu();
+	Game g;
 	//Start Playing the game
 	if (menu_number == 1) {
-		Play p;
+		//Play p;
 		chose_play += 1;
+		g.play();
 	}
 	//See the statistic
 	else if (menu_number == 2) {
@@ -46,7 +48,8 @@ void Menu::show_function()
 	}
 	//See the help
 	else if (menu_number == 3) {
-		Help h;
+		//Help h;
+		g.help();
 	}
 	//Invalid input
 	else {
