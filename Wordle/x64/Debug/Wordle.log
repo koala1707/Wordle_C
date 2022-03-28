@@ -1,10 +1,2 @@
-﻿  Game.cpp
-  GameHelp.cpp
-  Guess.cpp
-  Help.cpp
-  Main.cpp
-  Menu.cpp
-  Session.cpp
-  Statistic.cpp
-  Generating Code...
+﻿  Main.cpp
   Wordle.vcxproj -> C:\Users\m3tpf\source\repos\Wordle\x64\Debug\Wordle.exe

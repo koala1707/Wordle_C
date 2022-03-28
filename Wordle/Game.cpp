@@ -1,6 +1,8 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "Game.h"
 #include <map>
 #include "Session.h"
+#include "Statistic.h"
 using namespace std;
 
 //Game::Game()
@@ -11,6 +13,50 @@ using namespace std;
 //Game::~Game()
 //{
 //}
+
+
+void Game::menu()
+{
+	map<int, string> menu;
+
+	printf("Welcome to Werdle.\nSelect an option :\n\n");
+
+	menu[1] = "Play a game.";
+	menu[2] = "View statistic.";
+	menu[3] = "View help.";
+
+	for (const auto& x : menu) {
+		printf(" %d. %s\n", x.first, x.second.c_str());
+	}
+
+	int* menu_ptr = &menu_number;
+	printf("> ");
+	scanf("%d", menu_ptr);
+
+	//Start Playing the game
+	if (menu_number == 1) {
+		//Play p;
+		chose_play += 1;
+		play();
+	}
+	//See the statistic
+	else if (menu_number == 2) {
+		statistics();
+	}
+	//See the help
+	else if (menu_number == 3) {
+		//Help h;
+		help();
+	}
+	//Invalid input
+	else {
+		int c = getchar();
+		while (c != '\n' && c != EOF)
+			c = getchar();
+	}
+
+
+}
 
 void Game::play()
 {
