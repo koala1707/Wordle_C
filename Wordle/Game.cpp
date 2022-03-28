@@ -5,16 +5,6 @@
 #include "Statistic.h"
 using namespace std;
 
-//Game::Game()
-//{
-//	
-//}
-//
-//Game::~Game()
-//{
-//}
-
-
 void Game::menu()
 {
 	map<int, string> menu;
@@ -37,7 +27,9 @@ void Game::menu()
 	if (menu_number == 1) {
 		//Play p;
 		chose_play += 1;
-		play();
+		//Session* session = new Session;
+		auto new_session = new Session;
+		delete new_session;
 	}
 	//See the statistic
 	else if (menu_number == 2) {
@@ -58,13 +50,13 @@ void Game::menu()
 
 }
 
-void Game::play()
-{
-	//Session session;
-	//Session();
-	auto new_session = new Session();
-	delete new_session;
-}
+//void Game::play()
+//{
+//	//Session session;
+//	//Session();
+//	auto new_session = new Session();
+//	delete new_session;
+//}
 
 void Game::statistics()
 {

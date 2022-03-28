@@ -1,22 +1,34 @@
 #include "Session.h"
 #include "Menu.h"
 #include "Dictionary.h"
-#include "Guess.h"
 #include <iostream>
 using namespace std;
 
 Session::Session()
 {
-   
-    while (_input != expectation) {
+    
+    while (guess.input != expectation) {
         attempts += 1;
+        auto dictionary = get_word();
+        Guess(attempts, dictionary);
+        /*user_inputs = guess.user_input;
+        for (int i = 0; i < user_inputs.size(); i++) {
+            printf("%s\n", user_inputs[i].c_str());
+        }*/
+
         //printf("%s", d.words[m.chose_play].c_str());
-        printf("guess >");
-        cin >> _input;
-        game_start(_input);
-        Guess guess;
-        //string guess_res = guess.split_input();
+        
+
+        //printf("guess >");
+        //cin >> _input;
+        //game_start(_input);
+       
+        //string Guess::split_input(_input);
+        //printf("input from guess: %s", guess._input);
+        //string guess_res = guess.split_input(_input);
         //printf("%s", guess_res);
+        
+        
         //auto show_all_inputs = guess.show_inputs(attempts, guess_res);
         //get_guess();
         //guess.question(attempts, input);
@@ -42,7 +54,8 @@ void Session::game_start(string input)
     Guess guess;
     printf("game_start\n");
     //string g = guess.split_input(input);
-    printf("g: %s\n", guess.response.c_str());
+    //printf("g: %s\n", guess.response.c_str());
+    //printf("g: %s\n", g.c_str());
 }
 
 
