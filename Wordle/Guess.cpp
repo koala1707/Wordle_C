@@ -5,8 +5,12 @@
 #include <iostream>
 using namespace std;
 
-//Guess::Guess()
-//{
+Guess::Guess()
+{
+   /* string answer = session->expectation;
+    while(input != answer){*/
+       
+    //}
 //    printf("Guess\n");
 //    Session session;
 //    
@@ -22,7 +26,20 @@ using namespace std;
 //    //        printf("%s\n", list[i].c_str());
 //    //    }
 //    //}
-//}
+}
+
+Guess::Guess(int attempts, map<int, char> dictionary) {
+    printf("attempt: %d\n", attempts);
+    printf("guess >");
+    cin >> input;
+    split_input(input, dictionary);
+    auto show_all_inputs = show_inputs(attempts, response);
+    //user_input.insert({ attempts, res });
+    //list_inputs = show_inputs(attempts, res);
+    for (int i = 0; i < show_all_inputs.size(); i++) {
+        printf("%s\n", show_all_inputs[i].c_str());
+    }
+}
 
 void Guess::question(int num, string guess)
 {
@@ -50,20 +67,17 @@ void Guess::question(int num, string guess)
 //        }
 //}
 
-//Guess::~Guess()
-//{
-//}
-
-string Guess::split_input(string input)
+Guess::~Guess()
 {
-    Session session;
-    //map of the letter in dictionary
-    auto answer = session.ans_map;
-    string user_guess = session._input;
+}
+
+string Guess::split_input(string input, map<int, char> dic)
+{
+    response = "";
     for (int i = 0; i < input.length(); i++) {
         bool c = false;
-        response = "";
-        if (input[i] == answer[i]) {
+        //map<int, char> ptr = session->ans_map;
+        if (input[i] == dic[i]) {
             // printf("same position: %c\n", ans_map[i]);
              //response += '[' + s[i] + ']';
             response += '[';
@@ -72,8 +86,8 @@ string Guess::split_input(string input)
             skip = i;
         }
         else {
-            for (int j = 0; j < answer.size(); j++) {
-                if (input[i] == answer[j] && input[skip] != answer[j]) {
+            for (int j = 0; j < dic.size(); j++) {
+                if (input[i] == dic[j] && input[skip] != dic[j]) {
                     //printf("included: %c\n", ans_map[j]);
                     //response += '|' + s[i] + '|';
                     response += '|';
@@ -92,9 +106,12 @@ string Guess::split_input(string input)
         }
 
     }
-   
     return response;
 }
+
+//map<int, string> Guess::word_dic(int i , string s) {
+//
+//}
 
 //void Guess::cal_guess()
 //{
