@@ -26,7 +26,7 @@ Play::Play()
         printf("guess >");
         cin >> input;
         split_input(input);
-        list_ans.push_back(input);
+        //list_ans.push_back(input);
         auto show_all_inputs= show_inputs(attempts, response);
        // if (!show_all_inputs.empty()) {
         for (int i = 0; i < show_all_inputs.size(); i++) {

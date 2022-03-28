@@ -5,7 +5,12 @@ using std::string;
 class Game
 {
 public:
-	virtual string option()=0;
+	/*Game();
+	~Game();*/
+	void play();
+	void statistics();
+	void help();
+	//virtual string option()=0;
 	void select();
 
 protected:
