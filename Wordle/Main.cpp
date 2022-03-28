@@ -15,10 +15,10 @@ using namespace std;
 int main()
 {
 	
-	Menu m;
+	Game game;
 	do {
-		m.show_function();
-	} while (m.menu_number != 0);
+		game.menu();
+	} while (game.menu_number != 0);
 	
 	return 0;
 }
