@@ -5,23 +5,37 @@
 using namespace std;
 
 Session::Session()
+ {
+
+}
+
+Session::Session(int* num)
 {
-    auto dictionary = get_word();
+    //auto dictionary = get_word();
+    //guess.question(expectation, dictionary);
+    auto dictionary = get_word(*num);
     guess.question(expectation, dictionary);
+    *num += 1;
 }
 
 Session::~Session()
 {
 }
 
-map<int, char> Session::get_word()
+void Session::sequence(int num) {
+
+}
+
+map<int, char> Session::get_word(int num)
 {
     Dictionary d;
-    expectation = d.words[0];
+    expectation = d.words[num];
     for (int i = 0; i < expectation.length(); i++) {
         ans_map.insert(pair<int, char>(i, expectation[i]));
     }
     return ans_map;
 }
+
+
 
 

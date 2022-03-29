@@ -9,13 +9,11 @@ class Session;
 class Guess
 {
 public:
-	/*Guess();
-	Guess(int num_play, map<int, char>);
-	~Guess();*/
 	Session *session;
 	void question(string answer,map<int, char> dictionary);
 	string split_input(string input, map<int,char> dic);
 	void show_inputs(string res);
+	int play_game;
 	
 protected:
 	string user_ans;
@@ -31,7 +29,6 @@ protected:
 	map<int, string> list_comment = {};
 	bool check_input(string _input);
 	bool string_check = false;
-	//string result;
 	string convert_lower(string user_ans);
 
 };
