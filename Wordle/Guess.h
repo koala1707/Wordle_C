@@ -8,31 +8,23 @@ class Session;
 class Guess
 {
 public:
-	Guess();
+	/*Guess();
 	Guess(int num_play, map<int, char>);
-	~Guess();
-	
-	;
-	Session* session;
-	map<int, string> word_dic(int i, string s);
-	//Session* _input;
-	//string _input = "";
-	void question(int num, string guess);
+	~Guess();*/
+	Session *session;
+	void question(string answer,map<int, char> dictionary);
 	string split_input(string input, map<int,char> dic);
-	map<int, string> list_inputs;
-	map<int, string> show_inputs(int times, string res);
-	string input;
-	string response = "";
-	string result = "";
-	//void show_inputs(int times, string res);
-	void cal_guess();
-	bool res = false;
-	map<int, string> user_input = {};
+	void show_inputs(string res);
+	
 protected:
-	
+	string input;
+	int attempts = 0;
+	string response = "";
 	int skip;
-	
-	
+	int num_guess;
+	map<int, string> user_input = {};
+	void comment(int num);
+	map<int, string> list_comment = {};
 	
 
 };
