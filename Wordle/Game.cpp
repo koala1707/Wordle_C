@@ -25,8 +25,10 @@ void Game::menu()
 
 	//Start Playing the game
 	if (menu_number == 1) {
-		//Play p;
-		Session* session = new Session(chose_play);
+		Session s;//Play p;
+		//Session* session = new Session();
+		auto session = new Session();
+		
 		//auto new_session = new Session;
 		delete session;
 		chose_play += 1;

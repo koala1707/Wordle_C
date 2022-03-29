@@ -25,7 +25,8 @@ protected:
 	map<int, string> user_input = {};
 	void comment(int num);
 	map<int, string> list_comment = {};
-	
+	bool check_input(string _input);
+	bool string_check = false;
 
 };
 
