@@ -25,20 +25,33 @@ void Game::menu()
 
 	//Start Playing the game
 	if (menu_number == 1) {
-		Session s;//Play p;
+		//Session s;//Play p;
 		//Session* session = new Session();
-		auto session = new Session();
-		//auto new_session = new Session;
+		//if (stop_game == true) {
+		int* chose_ptr = &chose_play;
+		auto session = new Session(chose_ptr);
+			//auto new_session = new Session;
 		delete session;
-		chose_play += 1;
+		//}
+		
+		/*s.get_word(chose_ptr);
+		for(int i =0; i< s.ans_map.size(); i++){
+			printf("ans_map: %s", s.ans_map[i]);
+		}*/
+		
+		stop_game = false;
 
 	}
 	//See the statistic
 	else if (menu_number == 2) {
+		stop_game = true;
 		statistics();
+		
+
 	}
 	//See the help
 	else if (menu_number == 3) {
+		stop_game = true;
 		help();
 	}
 	//Invalid input

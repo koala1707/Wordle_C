@@ -9,6 +9,7 @@ int main()
 {
 	Game game;
 	do {
+		printf("%d", game.chose_play);
 		game.menu();
 	} while (game.menu_number != 0);
 	

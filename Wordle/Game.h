@@ -10,6 +10,7 @@ public:
 	int chose_play = 0;
 	void statistics();
 	void help();
+	bool stop_game = false;
 
 protected:
 };
