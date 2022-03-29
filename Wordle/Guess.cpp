@@ -56,11 +56,15 @@ void Guess::question(string answer,map<int, char> dictionary)
     do {
         //printf("ans: %s\n", answer.c_str());
         printf("guess >");
-        cin >> input;
+        cin >> user_ans;
+        input = convert_lower(user_ans);
         bool input_type = check_input(input);
         if (input_type && input.length() == 5) {
-            string result = split_input(input, dictionary);
-            show_inputs(result);
+            /*for (int i = 0; i < input.length(); i++) {
+                input[i] = tolower(input[i]);
+            }*/
+            res = split_input(input, dictionary);
+            show_inputs(res);
             attempts += 1;
         }
        
@@ -80,6 +84,7 @@ string Guess::split_input(string input, map<int, char> dic)
 {
     response = "";
     for (int i = 0; i < input.length(); i++) {
+        //input[i] = tolower(input[i]);
         bool c = false;
         //map<int, char> ptr = session->ans_map;
         if (input[i] == dic[i]) {
@@ -149,4 +154,14 @@ bool Guess::check_input(string _input)
         }
     }
     return string_check;
+}
+
+string Guess::convert_lower(string user_ans) {
+  
+    for (int i = 0; i < user_ans.length(); i++) {
+        user_ans_char.push_back(tolower(user_ans[i]));
+    }
+    string result(user_ans_char.begin(), user_ans_char.end());
+    user_ans_char.clear();
+    return result;
 }
