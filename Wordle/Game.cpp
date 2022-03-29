@@ -28,7 +28,6 @@ void Game::menu()
 		Session s;//Play p;
 		//Session* session = new Session();
 		auto session = new Session();
-		
 		//auto new_session = new Session;
 		delete session;
 		chose_play += 1;
@@ -40,7 +39,6 @@ void Game::menu()
 	}
 	//See the help
 	else if (menu_number == 3) {
-		//Help h;
 		help();
 	}
 	//Invalid input
@@ -49,17 +47,7 @@ void Game::menu()
 		while (c != '\n' && c != EOF)
 			c = getchar();
 	}
-
-
 }
-
-//void Game::play()
-//{
-//	//Session session;
-//	//Session();
-//	auto new_session = new Session();
-//	delete new_session;
-//}
 
 void Game::statistics()
 {
@@ -78,13 +66,3 @@ The letter E is in the word but in the wrong position.\n\n";
 	printf("%s", help);
 }
 
-void Game::select()
-{
-	
-
-	/*int select = 0;
-	int* ptr = &select;
-	printf("Welcome to Werdle\nSelect an option: \n\n");
-	printf(" 1.Play a game.\n 2.View statistic.\n 3.View help.\n");*/
-	
-}

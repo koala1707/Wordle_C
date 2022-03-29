@@ -2,15 +2,7 @@
 #include <stdint.h>
 #include <iostream>
 #include <string>
-
 #include "Game.h"
-#include "Play.h"
-#include "Statistic.h"
-#include "Help.h"
-#include "GameHelp.h"
-#include "Menu.h"
-#include "Session.h"
-
 using namespace std;
 
 int main()
@@ -18,7 +10,6 @@ int main()
 	Game game;
 	do {
 		game.menu();
-		
 	} while (game.menu_number != 0);
 	
 	return 0;
