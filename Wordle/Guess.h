@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <map>
+#include <vector>
 using namespace std;
 
 class Session;
@@ -17,9 +18,12 @@ public:
 	void show_inputs(string res);
 	
 protected:
+	string user_ans;
+	vector<char> user_ans_char;
 	string input;
 	int attempts = 0;
 	string response = "";
+	string res;
 	int skip;
 	int num_guess;
 	map<int, string> user_input = {};
@@ -27,6 +31,8 @@ protected:
 	map<int, string> list_comment = {};
 	bool check_input(string _input);
 	bool string_check = false;
+	//string result;
+	string convert_lower(string user_ans);
 
 };
 
