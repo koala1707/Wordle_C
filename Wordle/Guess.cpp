@@ -54,22 +54,15 @@ using namespace std;
 void Guess::question(string answer,map<int, char> dictionary)
 {
     do {
-        //printf("ans: %s\n", answer.c_str());
         printf("guess >");
         cin >> user_ans;
         input = convert_lower(user_ans);
         bool input_type = check_input(input);
         if (input_type && input.length() == 5) {
-            /*for (int i = 0; i < input.length(); i++) {
-                input[i] = tolower(input[i]);
-            }*/
             res = split_input(input, dictionary);
             show_inputs(res);
             attempts += 1;
         }
-       
-        //printf("%s", (string_check && input.length() == 4) ? "true" : "false");
-       
     } while (!(input == answer || attempts == 6));
 
     if(attempts < 6) {
@@ -84,12 +77,8 @@ string Guess::split_input(string input, map<int, char> dic)
 {
     response = "";
     for (int i = 0; i < input.length(); i++) {
-        //input[i] = tolower(input[i]);
         bool c = false;
-        //map<int, char> ptr = session->ans_map;
         if (input[i] == dic[i]) {
-            // printf("same position: %c\n", ans_map[i]);
-             //response += '[' + s[i] + ']';
             response += '[';
             response += input[i];
             response += ']';
@@ -98,8 +87,6 @@ string Guess::split_input(string input, map<int, char> dic)
         else {
             for (int j = 0; j < dic.size(); j++) {
                 if (input[i] == dic[j] && input[skip] != dic[j]) {
-                    //printf("included: %c\n", ans_map[j]);
-                    //response += '|' + s[i] + '|';
                     response += '|';
                     response += input[i];
                     response += '|';
@@ -114,16 +101,10 @@ string Guess::split_input(string input, map<int, char> dic)
 
             }
         }
-
     }
     return response;
 }
 
-//map<int, string> Guess::show_inputs(int times, string res)
-//{
-//    user_input.insert({ times, res });
-//    return user_input;
-//}
 void Guess::show_inputs(string res)
 {
     user_input.insert({ attempts, res });
