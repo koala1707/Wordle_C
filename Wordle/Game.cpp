@@ -26,10 +26,11 @@ void Game::menu()
 	//Start Playing the game
 	if (menu_number == 1) {
 		//Play p;
+		Session* session = new Session(chose_play);
+		//auto new_session = new Session;
+		delete session;
 		chose_play += 1;
-		//Session* session = new Session;
-		auto new_session = new Session;
-		delete new_session;
+
 	}
 	//See the statistic
 	else if (menu_number == 2) {
