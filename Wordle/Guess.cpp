@@ -54,12 +54,18 @@ using namespace std;
 void Guess::question(string answer,map<int, char> dictionary)
 {
     do {
-        printf("ans: %s\n", answer.c_str());
+        //printf("ans: %s\n", answer.c_str());
         printf("guess >");
         cin >> input;
-        string result = split_input(input, dictionary);
-        show_inputs(result);
-        attempts += 1;
+        bool input_type = check_input(input);
+        if (input_type && input.length() == 5) {
+            string result = split_input(input, dictionary);
+            show_inputs(result);
+            attempts += 1;
+        }
+       
+        //printf("%s", (string_check && input.length() == 4) ? "true" : "false");
+       
     } while (!(input == answer || attempts == 6));
 
     if(attempts < 6) {
@@ -129,4 +135,18 @@ void Guess::comment(int num) {
     list_comment.insert({ 4, "Nice one!" });
     list_comment.insert({ 5, "You got there!" });
     printf("%s\n\n", list_comment[num].c_str());
+}
+
+bool Guess::check_input(string _input) 
+{
+    for (int i = 0; i < _input.length(); i++) {
+        string_check = false;
+        if (isdigit(_input[i]) == false) {
+            string_check = true;
+        }
+        else {
+            break;
+        }
+    }
+    return string_check;
 }

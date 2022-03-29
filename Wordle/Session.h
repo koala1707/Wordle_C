@@ -11,12 +11,11 @@ class Session
 {
 public:
 	Session();
-	Session(int count);
 	~Session();
 	Guess guess;
 	map<int, string> user_inputs;
 	
-	map<int, char> get_word(int num);
+	map<int, char> get_word();
 	map<int, char> ans_map = {};
 	
 	Dictionary d;
