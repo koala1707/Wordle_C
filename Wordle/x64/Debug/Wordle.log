@@ -1,2 +1,13 @@
-﻿  Session.cpp
+﻿  Dictionary.cpp
+  Game.cpp
+  GameHelp.cpp
+  Guess.cpp
+  Help.cpp
+  Main.cpp
+  Menu.cpp
+  Play.cpp
+C:\Users\m3tpf\source\repos\Wordle\Wordle\Play.cpp(19,16): warning C4101: 'd': unreferenced local variable
+  Session.cpp
+  Statistic.cpp
+  Generating Code...
   Wordle.vcxproj -> C:\Users\m3tpf\source\repos\Wordle\x64\Debug\Wordle.exe

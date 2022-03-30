@@ -5,8 +5,7 @@
 using namespace std;
 
 Session::Session()
- {
-
+{
 }
 
 Session::Session(int* num)
@@ -23,19 +22,10 @@ Session::Session(int* num)
         comment(*attempts_ptr);
     }
     *num += 1;
-    //auto dictionary = get_word();
-    //guess.question(expectation, dictionary);
-   
-    
-   
 }
 
 Session::~Session()
 {
-}
-
-void Session::sequence(int num) {
-
 }
 
 map<int, char> Session::get_word(int num)
