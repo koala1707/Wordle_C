@@ -1,5 +1,4 @@
 #include "Session.h"
-#include "Menu.h"
 #include "Dictionary.h"
 #include <iostream>
 using namespace std;
@@ -20,11 +19,17 @@ Session::Session(int* num)
     } while (!(input == expectation || *attempts_ptr == 5));
     if (*attempts_ptr < 6 && input == expectation) {
         comment(*attempts_ptr);
-        won = true;
+        won_res = true;
+        //won = 0;
     }
     else {
         printf("Correct answer: %s\n\n", expectation.c_str());
+        won_res = false;
+        //won = -1;
     }
+    //statistic.distribution(won, *attempts_ptr, *num);
+    //delete won;
+    //r = res_game(won);
     *num += 1;
 }
 
@@ -51,7 +56,7 @@ string Session::convert_lower(string user_ans)
     user_ans_char.clear();
     return result;
 }
-
+ 
 void Session::comment(int num) {
     list_comment.insert({ 0, "Impossible!" });
     list_comment.insert({ 1, "Amazing" });
@@ -61,6 +66,7 @@ void Session::comment(int num) {
     list_comment.insert({ 5, "You got there!" });
     printf("%s\n\n", list_comment[num].c_str());
 }
+
 
 
 
