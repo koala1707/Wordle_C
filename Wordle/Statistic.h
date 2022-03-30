@@ -1,10 +1,14 @@
 #pragma once
-#include "Game.h"
+#include <map>
 
 class Statistic
 {
 public:
-	Statistic();
-	~Statistic();
+	//Statistic();
+	//~Statistic();
+	void game_result(int *num_play);
+protected:
+	void distribution();
+	
 };
 

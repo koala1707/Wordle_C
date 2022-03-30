@@ -17,6 +17,7 @@ public:
 	Guess guess;
 	string input;
 	string expectation;
+	bool won = false;
 
 protected:
 	map<int, char> get_word(int num);
