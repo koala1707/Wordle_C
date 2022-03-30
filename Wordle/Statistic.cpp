@@ -1,10 +1,20 @@
 #include "Statistic.h"
+#include <stdio.h>
 
-Statistic::Statistic()
+//Statistic::Statistic()
+//{
+//    printf("statistic\n");
+//}
+//
+//Statistic::~Statistic()
+//{
+//}
+
+void Statistic::game_result(int *num_play)
 {
-    printf("statistic\n");
+
 }
 
-Statistic::~Statistic()
+void Statistic::distribution()
 {
 }

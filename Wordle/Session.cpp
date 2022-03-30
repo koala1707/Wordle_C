@@ -18,8 +18,12 @@ Session::Session(int* num)
         guess.question(expectation, dictionary, input);
         *attempts_ptr += 1;
     } while (!(input == expectation || *attempts_ptr == 5));
-    if (*attempts_ptr <= 5) {
+    if (*attempts_ptr < 6 && input == expectation) {
         comment(*attempts_ptr);
+        won = true;
+    }
+    else {
+        printf("Correct answer: %s\n\n", expectation.c_str());
     }
     *num += 1;
 }
