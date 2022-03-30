@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <map>
+#include <vector>
 using namespace std;
 
 class Game
@@ -14,9 +15,9 @@ protected:
 	int chose_play = 0;
 	void stats();
 	void help();
-	map<int, int> show_guess_distribution(int attempt);
-	map<int, int> list_distribution;
-	map<int, int> result_distribution;
+	vector<int> show_guess_distribution(int attempt, bool won);
+	//map<int, int> list_distribution;
+	vector<int> result_distribution;
 	bool check_win =false;
 	int played = 0;
 	int num_won=0;
@@ -24,5 +25,6 @@ protected:
 	int max_streak=0;
 	double percent_won = 0.0;
 	map<int, int> won_attempts ={};
+	vector<int> list_distribution = {0,0,0,0,0,0};
 };
 
