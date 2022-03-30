@@ -25,11 +25,7 @@ void Game::menu()
 
 	//Start Playing the game
 	if (menu_number == 1) {
-		//int* chose_ptr = &chose_play;
 		auto session = new Session(chose_ptr);
-		//printf("%s\n", session_mem.won_res ? "true" : "false");
-		//printf("mem: %d\n", *session_mem.won_ptr);
-		played = session->attempts_ptr;
 		result_distribution = show_guess_distribution(session->attempts);
 		if (session->won_res) {
 			check_win = true;
@@ -65,12 +61,15 @@ void Game::stats()
 	else {
 		streak = 0;
 	}
-	printf("max: %d / chose_ptr: %d\n", max_streak, *chose_ptr);
-	printf("played: %d\n", *played);
-	percent_won = ((max_streak / *chose_ptr) * 100);
-	printf("Played: %d Win%: %f Current streak: %d Max streak: %d\n\n", 
+	if (*chose_ptr == 0) {
+		double percent_won = 0.0;
+	}
+	else {
+		percent_won = (double(max_streak) / double(*chose_ptr)) * 100;
+	}
+	printf("%f\n", percent_won);
+	printf("Played: %d Win%%: %.0f Current streak: %d Max streak: %d\n\n", 
 		*chose_ptr, percent_won, streak, max_streak);
-	cout << "Played: " << *chose_ptr << " Win%: "<< percent_won << " Current streak: " << streak << " Max streak: " << max_streak<< endl;
 	printf("GUESS DISTRIBUTION\n");
 	for (int i = 0; i < won_attempts.size(); i++) {
 		printf("%d: %d\n", i + 1, won_attempts[i]);

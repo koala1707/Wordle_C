@@ -18,11 +18,11 @@ protected:
 	map<int, int> list_distribution;
 	map<int, int> result_distribution;
 	bool check_win =false;
-	int *played;
-	int num_won;
-	int streak;
-	int max_streak;
-	float percent_won;
+	int played = 0;
+	int num_won=0;
+	int streak=0;
+	int max_streak=0;
+	double percent_won = 0.0;
 	map<int, int> won_attempts ={};
 };
 
