@@ -65,17 +65,7 @@ void Guess::show_inputs(string res)
     }
 }
 
-//void Guess::comment(int num) {
-//    list_comment.insert({ 0, "Impossible!" });
-//    list_comment.insert({ 1, "Amazing" });
-//    list_comment.insert({ 2, "Outstanding!" });
-//    list_comment.insert({ 3, "Great!" });
-//    list_comment.insert({ 4, "Nice one!" });
-//    list_comment.insert({ 5, "You got there!" });
-//    printf("%s\n\n", list_comment[num].c_str());
-//}
-
-bool Guess::check_input(string _input) 
+bool Guess::check_input(string _input)
 {
     for (int i = 0; i < _input.length(); i++) {
         string_check = false;
@@ -88,6 +78,18 @@ bool Guess::check_input(string _input)
     }
     return string_check;
 }
+
+//void Guess::comment(int num) {
+//    list_comment.insert({ 0, "Impossible!" });
+//    list_comment.insert({ 1, "Amazing" });
+//    list_comment.insert({ 2, "Outstanding!" });
+//    list_comment.insert({ 3, "Great!" });
+//    list_comment.insert({ 4, "Nice one!" });
+//    list_comment.insert({ 5, "You got there!" });
+//    printf("%s\n\n", list_comment[num].c_str());
+//}
+
+
 
 //string Guess::convert_lower(string user_ans) 
 //{
