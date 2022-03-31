@@ -7,15 +7,13 @@ using namespace std;
 
 void Game::menu()
 {
-	map<int, string> menu;
-
 	printf("Welcome to Werdle.\nSelect an option :\n\n");
 
-	menu[1] = "Play a game.";
-	menu[2] = "View statistic.";
-	menu[3] = "View help.";
+	map_menu[1] = "Play a game.";
+	map_menu[2] = "View statistic.";
+	map_menu[3] = "View help.";
 
-	for (const auto& x : menu) {
+	for (const auto& x : map_menu) {
 		printf(" %d. %s\n", x.first, x.second.c_str());
 	}
 
@@ -83,7 +81,6 @@ vector<int> Game::show_guess_distribution(int attemp, bool won) {
 			list_distribution[i]++;
 		}
 	}
-
 	return list_distribution;
 }
 

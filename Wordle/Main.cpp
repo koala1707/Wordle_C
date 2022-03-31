@@ -10,7 +10,7 @@ int main()
 	Game game;
 	do {
 		game.menu();
-	} while (game.menu_number != 0);
+	} while (game.no_exit = true);
 	
 	return 0;
 }
