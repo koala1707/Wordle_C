@@ -13,12 +13,12 @@ public:
 	
 protected:
 	bool input_type;
-	string response = "";
+	string response{ "" };
 	bool duplicate;
 	int skip;
 	vector<string> user_input;
 	string split_res;
-	bool string_check = false;
+	bool string_check{ false };
 
 	bool check_input(string _input);
 	string split_input(string input, map<int, char> dic);
