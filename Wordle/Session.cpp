@@ -3,10 +3,6 @@
 #include <iostream>
 using namespace std;
 
-Session::Session()
-{
-}
-
 Session::Session(int* num)
 {
     auto dictionary = get_word(*num);
@@ -20,16 +16,11 @@ Session::Session(int* num)
     if (*attempts_ptr < 6 && input == expectation) {
         comment(*attempts_ptr);
         won_res = true;
-        //won = 0;
     }
     else {
         printf("Correct answer: %s\n\n", expectation.c_str());
         won_res = false;
-        //won = -1;
     }
-    //statistic.distribution(won, *attempts_ptr, *num);
-    //delete won;
-    //r = res_game(won);
     *num += 1;
 }
 

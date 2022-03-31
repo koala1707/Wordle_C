@@ -25,13 +25,16 @@ void Game::menu()
 	if (menu_number == 1) {
 		auto session = new Session(chose_ptr);
 		if (session->won_res) {
+			num_won++;
+			streak++;
+			max_streak++;
 			check_win = true;
 		}
 		else {
+			streak = 0;
 			check_win = false;
 		}
 		result_distribution = show_guess_distribution(session->attempts, check_win);
-		
 		delete session;
 	}
 	//See the statistic
@@ -44,24 +47,17 @@ void Game::menu()
 	}
 	//Invalid input
 	else {
-		int c = getchar();
-		while (c != '\n' && c != EOF)
-			c = getchar();
+		int invalid_input = getchar();
+		while (invalid_input != '\n' && invalid_input != EOF)
+			invalid_input = getchar();
 	}
 }
 
 void Game::stats() 
 {
-	if (check_win) {
-		num_won++;
-		streak++;
-		max_streak++;
-	}
-	else {
-		streak = 0;
-	}
 	if (*chose_ptr == 0) {
 		double percent_won = 0.0;
+		result_distribution = list_distribution;
 	}
 	else {
 		percent_won = (double(max_streak) / double(*chose_ptr)) * 100;
