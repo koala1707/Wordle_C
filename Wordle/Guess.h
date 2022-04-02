@@ -8,7 +8,8 @@ class Session;
 class Guess
 {
 public:
-	Session *session;
+	//Session *session;
+
 	void question(string answer,map<int, char> dictionary, string user_ans);
 	
 protected:
