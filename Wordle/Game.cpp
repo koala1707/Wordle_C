@@ -19,22 +19,10 @@ void Game::menu()
 		printf(" %d. %s\n", x.first, x.second.c_str());
 	}
 	// ask a user input
-	//int* menu_ptr = &menu_number;
 	printf("> ");
-	//scanf("%s", user_option);
 	cin >> user_option;
-	int menu_number = check_input(user_option);
-	//if (scanf("%d", menu_ptr) != 1 ) {
-	//if (scanf("%s", menu_ptr) != 1) {
-	//	//Check an invalid input
-	//	int invalid_input = getchar();
-	//	while (invalid_input != '\n' && invalid_input != EOF)
-	//		invalid_input = getchar();
-	//	return;
-	//}
+	menu_number = check_input(user_option);
 	
-	
-	//printf("menu_ptr: %d\n", menu_number);
 	//Start Playing Wordle
 	if (menu_number == 1) {
 		unique_ptr<Session> session(new Session(chose_ptr));
@@ -61,21 +49,18 @@ void Game::menu()
 	}
 	//menu_number = 0;
 	else {
-	//	//*menu_ptr = NULL;
 		int invalid_input = getchar();
 		while (invalid_input != '\n' && invalid_input != EOF)
 			invalid_input = getchar();
 	}
-
-	////delete menu_ptr;
 }
 
+//check if the user input is valid.
 int Game::check_input(string input) {
+	//delete spaces in the user input
 	setfill(input);
 	vector<char> split_input(input.begin(), input.end());
 	for (int i = 0; i < split_input.size(); i++) {
-		//printf("size: %d\n", split_input.size());
-		//printf("input_char: %c\n", split_input[i]);
 		if (split_input.size() == 1) {
 			if (split_input[0] == '1') {
 				return 1;
@@ -89,7 +74,6 @@ int Game::check_input(string input) {
 		}
 	}	
 	return 0;
-	
 }
 
 void Game::stats() 
