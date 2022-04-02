@@ -10,17 +10,23 @@ Session::Session(int* num)
         printf("guess >");
         cin >> user_ans;
         input = convert_lower(user_ans);
+        //Check if the user input and an answer of dictionary is matched in guess class
         guess.question(expectation, dictionary, input);
+        //Count how many attempts a user used
         *attempts_ptr += 1;
     } while (!(input == expectation || *attempts_ptr == 5));
+    // Shows a comment if the user input is matched with the answer of dictionary
     if (*attempts_ptr < 6 && input == expectation) {
         comment(*attempts_ptr);
+        // user won
         won_res = true;
     }
     else {
         printf("Correct answer: %s\n\n", expectation.c_str());
+        // user lost
         won_res = false;
     }
+    // Change an answer from dictionary
     *num += 1;
 }
 
@@ -28,6 +34,7 @@ Session::~Session()
 {
 }
 
+//change a answer(from dictionary) into a map<int, char>
 map<int, char> Session::get_word(int num)
 {
     Dictionary d;
@@ -38,6 +45,7 @@ map<int, char> Session::get_word(int num)
     return ans_map;
 }
 
+//change an input into lowercase
 string Session::convert_lower(string user_ans)
 {
     for (int i = 0; i < user_ans.length(); i++) {

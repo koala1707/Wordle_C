@@ -11,13 +11,10 @@ public:
 	void menu();
 	bool no_exit{ true };
 	Session* session;
-	//int menu_number{ 0 };
 	
 protected:
 	string user_option;
-	//vector<char> split_input;
 	int menu_number{ 0 };
-	//int* menu_ptr = &menu_number;
 	map<int, string> map_menu;
 	int chose_play{ 0 };
 	int* chose_ptr{ &chose_play };
