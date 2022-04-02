@@ -3,11 +3,13 @@
 #include <map>
 #include "Session.h"
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
+//Options of Wordle
 void Game::menu()
 {
-	printf("Welcome to Werdle.\nSelect an option :\n\n");
+	printf("Welcome to Wordle.\nSelect an option :\n\n");
 
 	map_menu[1] = "Play a game.";
 	map_menu[2] = "View statistic.";
@@ -16,14 +18,27 @@ void Game::menu()
 	for (const auto& x : map_menu) {
 		printf(" %d. %s\n", x.first, x.second.c_str());
 	}
-
-	int* menu_ptr = &menu_number;
+	// ask a user input
+	//int* menu_ptr = &menu_number;
 	printf("> ");
-	scanf("%d", menu_ptr);
-
-	//Start Playing the game
+	//scanf("%s", user_option);
+	cin >> user_option;
+	int menu_number = check_input(user_option);
+	//if (scanf("%d", menu_ptr) != 1 ) {
+	//if (scanf("%s", menu_ptr) != 1) {
+	//	//Check an invalid input
+	//	int invalid_input = getchar();
+	//	while (invalid_input != '\n' && invalid_input != EOF)
+	//		invalid_input = getchar();
+	//	return;
+	//}
+	
+	
+	//printf("menu_ptr: %d\n", menu_number);
+	//Start Playing Wordle
 	if (menu_number == 1) {
-		auto session = new Session(chose_ptr);
+		unique_ptr<Session> session(new Session(chose_ptr));
+		
 		if (session->won_res) {
 			num_won++;
 			streak++;
@@ -31,11 +46,10 @@ void Game::menu()
 			check_win = true;
 		}
 		else {
-			streak = 0;
+			streak = 0; 
 			check_win = false;
 		}
 		result_distribution = show_guess_distribution(session->attempts, check_win);
-		delete session;
 	}
 	//See the statistic
 	else if (menu_number == 2) {
@@ -43,18 +57,44 @@ void Game::menu()
 	}
 	//See the help
 	else if (menu_number == 3) {
-		help();
+		help(); 
 	}
-	//Invalid input
+	//menu_number = 0;
 	else {
+	//	//*menu_ptr = NULL;
 		int invalid_input = getchar();
 		while (invalid_input != '\n' && invalid_input != EOF)
 			invalid_input = getchar();
 	}
+
+	////delete menu_ptr;
+}
+
+int Game::check_input(string input) {
+	setfill(input);
+	vector<char> split_input(input.begin(), input.end());
+	for (int i = 0; i < split_input.size(); i++) {
+		//printf("size: %d\n", split_input.size());
+		//printf("input_char: %c\n", split_input[i]);
+		if (split_input.size() == 1) {
+			if (split_input[0] == '1') {
+				return 1;
+			}
+			else if (split_input[0] == '2') {
+				return 2;
+			}
+			else if (split_input[0] == '3') {
+				return 3;
+			}
+		}
+	}	
+	return 0;
+	
 }
 
 void Game::stats() 
 {
+	//a user hasn't started playing Wordle yet. The result of statistics is all zero.
 	if (*chose_ptr == 0) {
 		double percent_won = 0.0;
 		result_distribution = list_distribution;

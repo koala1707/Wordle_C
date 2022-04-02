@@ -2,6 +2,7 @@
 #include <string>
 #include <map>
 #include "Guess.h"
+#include <memory>
 using namespace std;
 
 class Game;
@@ -30,3 +31,4 @@ protected:
 	void comment(int num);
 };
 
+//typedef unique_ptr <Session> SessionPtr;
