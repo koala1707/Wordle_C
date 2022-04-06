@@ -1,5 +1,6 @@
 c:\users\m3tpf\source\repos\wordle\wordle\x64\debug\vc143.pdb
 c:\users\m3tpf\source\repos\wordle\wordle\x64\debug\vc143.idb
+<<<<<<< HEAD
 c:\users\m3tpf\source\repos\wordle\wordle\x64\debug\statistic.obj
 c:\users\m3tpf\source\repos\wordle\wordle\x64\debug\play.obj
 c:\users\m3tpf\source\repos\wordle\wordle\x64\debug\menu.obj
@@ -14,6 +15,16 @@ c:\users\m3tpf\source\repos\wordle\x64\debug\wordle.exe
 c:\users\m3tpf\source\repos\wordle\wordle\x64\debug\wordle.ilk
 c:\users\m3tpf\source\repos\wordle\x64\debug\wordle.pdb
 c:\users\m3tpf\source\repos\wordle\wordle\x64\debug\game.obj.enc
+=======
+c:\users\m3tpf\source\repos\wordle\wordle\x64\debug\session.obj
+c:\users\m3tpf\source\repos\wordle\wordle\x64\debug\main.obj
+c:\users\m3tpf\source\repos\wordle\wordle\x64\debug\guess.obj
+c:\users\m3tpf\source\repos\wordle\wordle\x64\debug\game.obj
+c:\users\m3tpf\source\repos\wordle\wordle\x64\debug\dictionary.obj
+c:\users\m3tpf\source\repos\wordle\wordle\x64\debug\wordle.ilk
+c:\users\m3tpf\source\repos\wordle\x64\debug\wordle.exe
+c:\users\m3tpf\source\repos\wordle\x64\debug\wordle.pdb
+>>>>>>> main
 c:\users\m3tpf\source\repos\wordle\wordle\x64\debug\wordle.tlog\cl.command.1.tlog
 c:\users\m3tpf\source\repos\wordle\wordle\x64\debug\wordle.tlog\cl.read.1.tlog
 c:\users\m3tpf\source\repos\wordle\wordle\x64\debug\wordle.tlog\cl.write.1.tlog
