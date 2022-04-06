@@ -8,22 +8,16 @@ class Session;
 class Guess
 {
 public:
-	//Session *session;
-
 	void question(string answer, map<int, char> dictionary, string user_ans);
 
 protected:
-	bool last_match = false;
 	bool input_type;
 	string response{ "" };
-	string last_letter;
 	bool duplicate;
 	int skip;
 	vector<string> user_input;
 	string split_res;
 	bool string_check{ false };
-	//map<int, char> skip = { (0, '0') };
-
 
 	bool check_input(string _input);
 	string split_input(string input, map<int, char> dic);

@@ -3,6 +3,7 @@
 #include "string"
 #include <map>
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 // Check if the user input is matched with the answer in the dictionary
@@ -71,9 +72,8 @@ string Guess::split_input(string input, map<int, char> dic)
 void Guess::show_inputs(string res)
 {
     user_input.push_back(res);
-    for (int i = 0; i < user_input.size(); i++) {
-        printf("%s\n", user_input[i].c_str());
-    }
+    auto printf = [](const string& str) {cout << str << endl; };
+    for_each(user_input.begin(), user_input.end(), printf);
 }
 
 // Check if the user input is all string
