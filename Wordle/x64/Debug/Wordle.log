@@ -1,8 +1,2 @@
-﻿  Dictionary.cpp
-  Game.cpp
-C:\Users\m3tpf\source\repos\Wordle\Wordle\Game.cpp(61,9): warning C4834: discarding return value of function with 'nodiscard' attribute
-  Guess.cpp
-  Main.cpp
-  Session.cpp
-  Generating Code...
+﻿  Guess.cpp
   Wordle.vcxproj -> C:\Users\m3tpf\source\repos\Wordle\x64\Debug\Wordle.exe
