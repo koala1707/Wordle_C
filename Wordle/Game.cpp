@@ -30,7 +30,6 @@ void Game::menu()
 		if (session->won_res) {
 			num_won++;
 			streak++;
-			max_streak++;
 			check_win = true;
 		}
 		else {
@@ -38,6 +37,9 @@ void Game::menu()
 			check_win = false;
 		}
 		result_distribution = show_guess_distribution(session->attempts, check_win);
+		if (streak > max_streak) {
+			max_streak = streak;
+		}
 	}
 	//See the statistic
 	else if (menu_number == 2) {
